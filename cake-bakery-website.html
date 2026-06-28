@@ -1,0 +1,2389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Candy Crush Cakes — Handcrafted Cakes in Malappuram, Kerala</title>
+<meta name="description" content="Freshly baked custom cakes in Malappuram, Kerala. Order birthday cakes, wedding cakes, bento cakes & more. Homemade with love, delivered to your door.">
+<meta name="keywords" content="cake shop Malappuram, birthday cakes Kerala, custom cakes, wedding cakes, bento cake, home bakery">
+<meta property="og:title" content="Candy Crush Cakes — Malappuram">
+<meta property="og:description" content="Handcrafted cakes freshly baked with love in Malappuram, Kerala.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink: #F8B4C8;
+  --pink-light: #FEF0F5;
+  --pink-deep: #E8748C;
+  --cream: #FFF8F0;
+  --brown: #5C3317;
+  --brown-light: #8B5E3C;
+  --gold: #C9973A;
+  --gold-light: #F5E6C8;
+  --white: #FFFFFF;
+  --text-dark: #2D1B0E;
+  --text-mid: #5C4033;
+  --text-light: #9B7B6A;
+  --shadow: 0 8px 32px rgba(93,51,23,0.10);
+  --shadow-hover: 0 16px 48px rgba(93,51,23,0.18);
+  --radius: 20px;
+  --radius-sm: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-dark="true"] {
+  --cream: #1A0F08;
+  --pink-light: #2A1520;
+  --white: #231510;
+  --text-dark: #F5E6D8;
+  --text-mid: #D4A98A;
+  --text-light: #9B7B6A;
+  --gold-light: #2A1E0A;
+  --shadow: 0 8px 32px rgba(0,0,0,0.4);
+  --shadow-hover: 0 16px 48px rgba(0,0,0,0.6);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  transition: background 0.3s, color 0.3s;
+}
+
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+/* ── NAV ──────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 0 24px;
+  transition: var(--transition);
+}
+
+nav.scrolled {
+  background: rgba(255,248,240,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 2px 20px rgba(93,51,23,0.08);
+  padding: 0 24px;
+}
+
+[data-dark="true"] nav.scrolled {
+  background: rgba(26,15,8,0.92);
+}
+
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 70px;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; font-weight: 700;
+  color: var(--brown);
+  text-decoration: none;
+  display: flex; align-items: center; gap: 8px;
+}
+
+.logo-icon { font-size: 28px; }
+
+.nav-links {
+  display: flex; gap: 32px; list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-mid); text-decoration: none;
+  font-size: 14px; font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-links a:hover { color: var(--pink-deep); }
+
+.nav-actions {
+  display: flex; align-items: center; gap: 12px;
+}
+
+.btn-dark-toggle {
+  background: none; border: none; cursor: pointer;
+  font-size: 20px; padding: 6px;
+  border-radius: 50%; transition: var(--transition);
+  color: var(--text-mid);
+}
+
+.btn-dark-toggle:hover { background: var(--pink-light); }
+
+.btn-nav {
+  background: linear-gradient(135deg, var(--pink-deep), #C45070);
+  color: white; border: none; padding: 10px 22px;
+  border-radius: 50px; font-family: 'Poppins', sans-serif;
+  font-size: 14px; font-weight: 600; cursor: pointer;
+  text-decoration: none; transition: var(--transition);
+  box-shadow: 0 4px 16px rgba(232,116,140,0.35);
+}
+
+.btn-nav:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(232,116,140,0.45);
+}
+
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+
+.hamburger span {
+  display: block; width: 24px; height: 2px;
+  background: var(--brown); border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* ── MOBILE NAV ─────────────────────────────────── */
+.mobile-menu {
+  display: none; position: fixed; top: 70px; left: 0; right: 0;
+  background: var(--white); padding: 24px;
+  box-shadow: var(--shadow); z-index: 999;
+  border-top: 1px solid var(--pink-light);
+}
+
+.mobile-menu.open { display: block; }
+
+.mobile-menu ul {
+  list-style: none; display: flex; flex-direction: column; gap: 16px;
+}
+
+.mobile-menu a {
+  color: var(--text-dark); text-decoration: none;
+  font-size: 16px; font-weight: 500;
+  display: block; padding: 8px 0;
+  border-bottom: 1px solid var(--pink-light);
+}
+
+/* ── HERO ────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #FFF0F5 0%, #FFF8F0 50%, #FFF5E8 100%);
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+  padding-top: 70px;
+}
+
+[data-dark="true"] .hero {
+  background: linear-gradient(160deg, #2A1520 0%, #1A0F08 50%, #1E130A 100%);
+}
+
+.hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.5;
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero-blob-1 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, #F8C4D4 0%, transparent 70%);
+  top: -100px; right: -100px;
+}
+
+.hero-blob-2 {
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, #F5E6C8 0%, transparent 70%);
+  bottom: 0; left: -80px;
+  animation-delay: -3s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.hero-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 60px 24px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 60px; align-items: center;
+  position: relative; z-index: 1;
+}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gold-light); color: var(--gold);
+  border: 1px solid rgba(201,151,58,0.3);
+  padding: 6px 16px; border-radius: 50px;
+  font-size: 13px; font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1.15;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.hero h1 span { color: var(--pink-deep); font-style: italic; }
+
+.hero-desc {
+  color: var(--text-mid);
+  font-size: 16px; line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.hero-btns {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--pink-deep), #C45070);
+  color: white; border: none; padding: 16px 36px;
+  border-radius: 50px; font-family: 'Poppins', sans-serif;
+  font-size: 15px; font-weight: 600; cursor: pointer;
+  text-decoration: none; transition: var(--transition);
+  box-shadow: 0 6px 24px rgba(232,116,140,0.4);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(232,116,140,0.5);
+}
+
+.btn-outline {
+  background: transparent; color: var(--brown);
+  border: 2px solid var(--brown); padding: 14px 34px;
+  border-radius: 50px; font-family: 'Poppins', sans-serif;
+  font-size: 15px; font-weight: 600; cursor: pointer;
+  text-decoration: none; transition: var(--transition);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+
+.btn-outline:hover {
+  background: var(--brown); color: white;
+  transform: translateY(-2px);
+}
+
+.hero-stats {
+  display: flex; gap: 32px;
+}
+
+.hero-stat strong {
+  font-family: 'Playfair Display', serif;
+  display: block; font-size: 28px;
+  color: var(--pink-deep);
+}
+
+.hero-stat span {
+  font-size: 13px; color: var(--text-light);
+}
+
+.hero-image {
+  position: relative;
+  animation: float 5s ease-in-out infinite;
+}
+
+.hero-image-frame {
+  width: 100%; aspect-ratio: 1;
+  border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+  background: linear-gradient(135deg, #F8B4C8, #F5E6C8, #FFD4A8);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 180px; overflow: hidden;
+  box-shadow: var(--shadow-hover);
+}
+
+.hero-floating-badges {
+  position: absolute;
+}
+
+.hero-badge-float {
+  position: absolute;
+  background: white; padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  font-size: 13px; font-weight: 600; color: var(--brown);
+  display: flex; align-items: center; gap: 8px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.hero-badge-float.top-left {
+  top: 10%; left: -10%;
+  animation-delay: -2s;
+}
+
+.hero-badge-float.bottom-right {
+  bottom: 15%; right: -5%;
+}
+
+/* ── SECTION COMMON ────────────────────────────── */
+section { padding: 80px 24px; }
+
+.section-inner { max-width: 1200px; margin: 0 auto; }
+
+.section-label {
+  color: var(--pink-deep); font-size: 13px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--text-dark); line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.section-sub {
+  color: var(--text-light); font-size: 16px;
+  line-height: 1.7; max-width: 560px;
+  margin-bottom: 48px;
+}
+
+.text-center { text-align: center; }
+.text-center .section-sub { margin: 0 auto 48px; }
+
+/* ── SCROLL ANIMATION ──────────────────────────── */
+.fade-up {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.visible {
+  opacity: 1; transform: translateY(0);
+}
+
+/* ── CATEGORIES ──────────────────────────────── */
+.categories-bg {
+  background: var(--white);
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.cat-card {
+  background: var(--cream);
+  border-radius: var(--radius);
+  padding: 28px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 2px solid transparent;
+  text-decoration: none;
+}
+
+.cat-card:hover, .cat-card.active {
+  border-color: var(--pink-deep);
+  background: var(--pink-light);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.cat-icon {
+  font-size: 48px; display: block;
+  margin-bottom: 12px;
+}
+
+.cat-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px; font-weight: 600;
+  color: var(--text-dark);
+}
+
+.cat-count {
+  font-size: 12px; color: var(--text-light);
+  margin-top: 4px;
+}
+
+/* ── SEARCH BAR ─────────────────────────────── */
+.search-wrap {
+  max-width: 480px; margin: 0 auto 48px;
+  position: relative;
+}
+
+.search-input {
+  width: 100%; padding: 14px 56px 14px 20px;
+  border: 2px solid var(--pink-light);
+  border-radius: 50px; font-family: 'Poppins', sans-serif;
+  font-size: 15px; background: var(--white);
+  color: var(--text-dark); outline: none;
+  transition: var(--transition);
+}
+
+.search-input:focus { border-color: var(--pink-deep); }
+
+.search-icon {
+  position: absolute; right: 18px; top: 50%;
+  transform: translateY(-50%); font-size: 20px;
+  color: var(--text-light);
+}
+
+/* ── PRODUCT CARDS ──────────────────────────── */
+.products-bg { background: var(--cream); }
+
+.products-filter {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.filter-btn {
+  padding: 8px 20px; border-radius: 50px;
+  border: 2px solid var(--pink-light);
+  background: var(--white); color: var(--text-mid);
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px; font-weight: 500; cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background: var(--pink-deep); color: white;
+  border-color: var(--pink-deep);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.product-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.product-img {
+  height: 220px;
+  background: linear-gradient(135deg, #FEF0F5, #FFF5E8);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 80px; position: relative; overflow: hidden;
+}
+
+.product-badge-tag {
+  position: absolute; top: 12px; left: 12px;
+  background: var(--pink-deep); color: white;
+  padding: 4px 12px; border-radius: 50px;
+  font-size: 11px; font-weight: 700;
+}
+
+.wishlist-btn {
+  position: absolute; top: 12px; right: 12px;
+  background: white; border: none; cursor: pointer;
+  width: 36px; height: 36px; border-radius: 50%;
+  font-size: 18px; display: flex; align-items: center;
+  justify-content: center; transition: var(--transition);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.wishlist-btn:hover { transform: scale(1.15); }
+.wishlist-btn.active { color: var(--pink-deep); }
+
+.product-body {
+  padding: 20px;
+}
+
+.product-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px; color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.product-rating {
+  display: flex; align-items: center; gap: 6px;
+  margin-bottom: 10px;
+}
+
+.stars { color: var(--gold); font-size: 14px; }
+
+.rating-count { color: var(--text-light); font-size: 12px; }
+
+.product-weights {
+  display: flex; gap: 6px; flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.weight-chip {
+  padding: 4px 10px; border-radius: 50px;
+  border: 1.5px solid var(--pink-light);
+  font-size: 12px; color: var(--text-mid);
+  cursor: pointer; transition: var(--transition);
+  background: none; font-family: 'Poppins', sans-serif;
+}
+
+.weight-chip.active, .weight-chip:hover {
+  border-color: var(--pink-deep); color: var(--pink-deep);
+  background: var(--pink-light);
+}
+
+.product-footer {
+  display: flex; align-items: center;
+  justify-content: space-between;
+}
+
+.product-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; color: var(--brown);
+  font-weight: 700;
+}
+
+.product-price small {
+  font-size: 13px; color: var(--text-light);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.btn-quick-order {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white; border: none; padding: 10px 18px;
+  border-radius: 50px; font-family: 'Poppins', sans-serif;
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: var(--transition); display: flex;
+  align-items: center; gap: 6px;
+}
+
+.btn-quick-order:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+}
+
+/* ── CUSTOM ORDER ──────────────────────────── */
+.custom-bg {
+  background: linear-gradient(135deg, #2D1B0E 0%, #5C3317 100%);
+  position: relative; overflow: hidden;
+}
+
+.custom-bg::before {
+  content: '🎂'; font-size: 400px;
+  position: absolute; right: -60px; bottom: -60px;
+  opacity: 0.05; line-height: 1;
+}
+
+.custom-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 60px; align-items: center;
+}
+
+.custom-text .section-label { color: var(--gold); }
+
+.custom-text .section-title { color: white; }
+
+.custom-text .section-sub { color: rgba(255,255,255,0.7); }
+
+.custom-steps {
+  display: flex; flex-direction: column; gap: 20px;
+}
+
+.custom-step {
+  display: flex; align-items: flex-start; gap: 16px;
+}
+
+.step-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; flex-shrink: 0;
+}
+
+.step-text strong {
+  display: block; color: white;
+  font-size: 15px; margin-bottom: 4px;
+}
+
+.step-text span {
+  color: rgba(255,255,255,0.6); font-size: 13px;
+}
+
+.custom-form {
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius);
+  padding: 36px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block; color: rgba(255,255,255,0.8);
+  font-size: 13px; font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%; padding: 12px 16px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius-sm);
+  color: white; font-family: 'Poppins', sans-serif;
+  font-size: 14px; outline: none;
+  transition: var(--transition);
+}
+
+.form-input::placeholder { color: rgba(255,255,255,0.4); }
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--pink);
+  background: rgba(255,255,255,0.18);
+}
+
+.form-select option { color: var(--text-dark); background: white; }
+
+.form-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+
+.form-textarea { min-height: 80px; resize: vertical; }
+
+.addons-grid {
+  display: flex; gap: 10px; flex-wrap: wrap;
+}
+
+.addon-check {
+  display: flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,0.08); padding: 8px 14px;
+  border-radius: 50px; cursor: pointer;
+  transition: var(--transition);
+  border: 1.5px solid transparent;
+}
+
+.addon-check input { display: none; }
+
+.addon-check:has(input:checked) {
+  background: var(--pink-light);
+  border-color: var(--pink);
+  color: var(--pink-deep);
+}
+
+.addon-check span { color: rgba(255,255,255,0.8); font-size: 13px; }
+
+.addon-check:has(input:checked) span { color: var(--pink-deep); }
+
+.btn-whatsapp-order {
+  width: 100%; margin-top: 20px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white; border: none; padding: 16px;
+  border-radius: var(--radius-sm); font-family: 'Poppins', sans-serif;
+  font-size: 16px; font-weight: 700; cursor: pointer;
+  transition: var(--transition); display: flex;
+  align-items: center; justify-content: center; gap: 10px;
+}
+
+.btn-whatsapp-order:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(37,211,102,0.5);
+}
+
+/* ── GALLERY ─────────────────────────────── */
+.gallery-bg { background: var(--white); }
+
+.gallery-grid {
+  columns: 4;
+  column-gap: 16px;
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: linear-gradient(135deg, #FEF0F5, #FFF5E8);
+  cursor: pointer; transition: var(--transition);
+  position: relative;
+}
+
+.gallery-item:hover { transform: scale(1.02); }
+
+.gallery-item-img {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 60px;
+}
+
+.gallery-item-img.tall { height: 280px; }
+.gallery-item-img.short { height: 180px; }
+.gallery-item-img.medium { height: 220px; }
+
+.gallery-overlay {
+  position: absolute; inset: 0;
+  background: rgba(93,51,23,0.75);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  opacity: 0; transition: var(--transition);
+  color: white; text-align: center; padding: 16px;
+}
+
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+
+.gallery-overlay p {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px; font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.gallery-overlay span { font-size: 13px; opacity: 0.8; }
+
+/* ── WHY US ──────────────────────────────── */
+.whyus-bg { background: var(--cream); }
+
+.whyus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.why-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  text-align: center;
+  transition: var(--transition);
+  border: 2px solid transparent;
+}
+
+.why-card:hover {
+  border-color: var(--pink);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.why-icon {
+  font-size: 48px;
+  margin-bottom: 16px; display: block;
+}
+
+.why-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px; color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.why-desc {
+  color: var(--text-light); font-size: 14px; line-height: 1.7;
+}
+
+/* ── PROCESS ─────────────────────────────── */
+.process-bg { background: var(--pink-light); }
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  position: relative;
+}
+
+.process-steps::before {
+  content: '';
+  position: absolute; top: 32px; left: 10%; right: 10%;
+  height: 2px; background: linear-gradient(90deg, var(--pink-deep), var(--gold));
+  z-index: 0;
+}
+
+.process-step {
+  text-align: center; position: relative; z-index: 1;
+}
+
+.process-num {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--pink-deep), #C45070);
+  color: white; font-family: 'Playfair Display', serif;
+  font-size: 24px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px; box-shadow: 0 6px 20px rgba(232,116,140,0.4);
+}
+
+.process-icon { font-size: 28px; display: block; margin-bottom: 12px; }
+
+.process-name {
+  font-weight: 600; font-size: 14px;
+  color: var(--text-dark); margin-bottom: 6px;
+}
+
+.process-desc {
+  font-size: 12px; color: var(--text-light); line-height: 1.5;
+}
+
+/* ── REVIEWS ─────────────────────────────── */
+.reviews-bg { background: var(--white); }
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.review-card {
+  background: var(--cream);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: var(--transition);
+  position: relative;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.review-card::before {
+  content: '"';
+  position: absolute; top: 16px; right: 24px;
+  font-family: 'Playfair Display', serif;
+  font-size: 80px; color: var(--pink);
+  line-height: 1; opacity: 0.4;
+}
+
+.review-rating { margin-bottom: 12px; color: var(--gold); font-size: 16px; }
+
+.review-text {
+  color: var(--text-mid); font-size: 14px; line-height: 1.7;
+  margin-bottom: 20px; font-style: italic;
+}
+
+.reviewer {
+  display: flex; align-items: center; gap: 12px;
+}
+
+.reviewer-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--pink), var(--gold));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+
+.reviewer-name {
+  font-weight: 600; font-size: 15px; color: var(--text-dark);
+}
+
+.reviewer-loc {
+  font-size: 12px; color: var(--text-light);
+}
+
+/* ── FAQ ─────────────────────────────────── */
+.faq-bg { background: var(--cream); }
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px; max-width: 900px; margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--pink-light);
+}
+
+.faq-q {
+  width: 100%; text-align: left;
+  padding: 18px 24px; background: none;
+  border: none; cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px; font-weight: 600;
+  color: var(--text-dark);
+  display: flex; justify-content: space-between;
+  align-items: center; gap: 12px;
+  transition: var(--transition);
+}
+
+.faq-q:hover { color: var(--pink-deep); }
+
+.faq-arrow {
+  font-size: 18px; transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.faq-item.open .faq-a { max-height: 200px; }
+
+.faq-a-inner {
+  padding: 0 24px 18px;
+  color: var(--text-light); font-size: 14px; line-height: 1.7;
+}
+
+/* ── CONTACT ─────────────────────────────── */
+.contact-bg {
+  background: var(--white);
+}
+
+.contact-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 60px; align-items: start;
+}
+
+.contact-info { display: flex; flex-direction: column; gap: 24px; }
+
+.contact-item {
+  display: flex; align-items: flex-start; gap: 16px;
+}
+
+.contact-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: var(--pink-light);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0;
+}
+
+.contact-item-text strong {
+  display: block; color: var(--text-dark);
+  font-size: 15px; margin-bottom: 4px;
+}
+
+.contact-item-text span {
+  color: var(--text-light); font-size: 14px;
+}
+
+.contact-item-text a {
+  color: var(--pink-deep); text-decoration: none;
+  font-weight: 500;
+}
+
+.map-embed {
+  width: 100%; height: 220px; border-radius: var(--radius);
+  overflow: hidden; border: 2px solid var(--pink-light);
+  margin-top: 24px;
+}
+
+.map-embed iframe { width: 100%; height: 100%; border: none; }
+
+.contact-form {
+  background: var(--cream);
+  border-radius: var(--radius);
+  padding: 36px;
+}
+
+.contact-form-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; color: var(--text-dark);
+  margin-bottom: 24px;
+}
+
+.light-input {
+  width: 100%; padding: 12px 16px;
+  background: var(--white);
+  border: 2px solid var(--pink-light);
+  border-radius: var(--radius-sm);
+  color: var(--text-dark); font-family: 'Poppins', sans-serif;
+  font-size: 14px; outline: none;
+  transition: var(--transition); margin-bottom: 16px;
+}
+
+.light-input:focus { border-color: var(--pink-deep); }
+
+.light-textarea {
+  min-height: 100px; resize: vertical;
+}
+
+.btn-send {
+  width: 100%;
+  background: linear-gradient(135deg, var(--pink-deep), #C45070);
+  color: white; border: none; padding: 14px;
+  border-radius: var(--radius-sm); font-family: 'Poppins', sans-serif;
+  font-size: 15px; font-weight: 600; cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-send:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(232,116,140,0.4);
+}
+
+.btn-wa-float {
+  position: fixed; bottom: 28px; right: 28px; z-index: 999;
+  background: #25D366; color: white;
+  width: 58px; height: 58px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; text-decoration: none;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.5);
+  transition: var(--transition);
+  animation: pulse-wa 2s infinite;
+}
+
+@keyframes pulse-wa {
+  0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,0.5); }
+  50% { box-shadow: 0 6px 40px rgba(37,211,102,0.8), 0 0 0 10px rgba(37,211,102,0.1); }
+}
+
+.btn-wa-float:hover { transform: scale(1.1); }
+
+/* ── FOOTER ──────────────────────────────── */
+footer {
+  background: var(--brown);
+  color: rgba(255,255,255,0.8);
+  padding: 60px 24px 24px;
+}
+
+.footer-inner {
+  max-width: 1200px; margin: 0 auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px; margin-bottom: 48px;
+}
+
+.footer-brand .logo {
+  color: white; margin-bottom: 16px;
+  display: inline-flex;
+}
+
+.footer-tagline {
+  font-size: 14px; line-height: 1.7;
+  opacity: 0.7; margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex; gap: 12px;
+}
+
+.social-link {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; text-decoration: none;
+  transition: var(--transition);
+}
+
+.social-link:hover { background: var(--pink-deep); transform: translateY(-2px); }
+
+.footer-col h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px; color: white;
+  margin-bottom: 16px;
+}
+
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+.footer-links a {
+  color: rgba(255,255,255,0.65); text-decoration: none;
+  font-size: 14px; transition: var(--transition);
+}
+
+.footer-links a:hover { color: var(--pink); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 24px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 16px;
+}
+
+.footer-bottom p { font-size: 13px; opacity: 0.6; }
+
+.footer-bottom-links {
+  display: flex; gap: 24px;
+}
+
+.footer-bottom-links a {
+  color: rgba(255,255,255,0.6); text-decoration: none;
+  font-size: 13px; transition: var(--transition);
+}
+
+.footer-bottom-links a:hover { color: var(--pink); }
+
+/* ── ADMIN PANEL ──────────────────────────── */
+.admin-panel {
+  display: none; position: fixed; inset: 0;
+  z-index: 2000; background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+}
+
+.admin-panel.open { display: flex; }
+
+.admin-sidebar {
+  width: 240px; background: var(--brown);
+  padding: 24px; display: flex; flex-direction: column;
+  gap: 8px;
+}
+
+.admin-logo {
+  font-family: 'Playfair Display', serif;
+  color: white; font-size: 18px; font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.admin-nav-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px; border-radius: 10px;
+  color: rgba(255,255,255,0.7); cursor: pointer;
+  font-size: 14px; transition: var(--transition);
+  border: none; background: none;
+  font-family: 'Poppins', sans-serif;
+  width: 100%; text-align: left;
+}
+
+.admin-nav-item:hover, .admin-nav-item.active {
+  background: rgba(255,255,255,0.12); color: white;
+}
+
+.admin-nav-item.active { color: var(--pink); }
+
+.admin-content {
+  flex: 1; background: var(--cream); overflow-y: auto;
+  padding: 32px;
+}
+
+.admin-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 28px;
+}
+
+.admin-header h2 {
+  font-size: 24px; color: var(--text-dark);
+}
+
+.btn-close-admin {
+  background: none; border: none; cursor: pointer;
+  font-size: 24px; color: var(--text-light);
+  padding: 4px;
+}
+
+.admin-stats-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 16px; margin-bottom: 28px;
+}
+
+.admin-stat-card {
+  background: var(--white); border-radius: var(--radius-sm);
+  padding: 20px; border: 1px solid var(--pink-light);
+}
+
+.admin-stat-card .label {
+  font-size: 12px; color: var(--text-light);
+  margin-bottom: 8px;
+}
+
+.admin-stat-card .value {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px; color: var(--text-dark); font-weight: 700;
+}
+
+.admin-stat-card .trend {
+  font-size: 12px; color: #22c55e; margin-top: 4px;
+}
+
+.admin-table {
+  width: 100%; border-collapse: collapse;
+  background: var(--white); border-radius: var(--radius-sm);
+  overflow: hidden; box-shadow: var(--shadow);
+}
+
+.admin-table th {
+  background: var(--cream); padding: 12px 16px;
+  text-align: left; font-size: 12px;
+  font-weight: 700; color: var(--text-light);
+  text-transform: uppercase; letter-spacing: 1px;
+  border-bottom: 1px solid var(--pink-light);
+}
+
+.admin-table td {
+  padding: 14px 16px; font-size: 14px;
+  color: var(--text-mid); border-bottom: 1px solid var(--pink-light);
+}
+
+.admin-table tr:last-child td { border-bottom: none; }
+
+.status-badge {
+  padding: 4px 10px; border-radius: 50px;
+  font-size: 11px; font-weight: 700;
+}
+
+.status-new { background: #EFF6FF; color: #3B82F6; }
+.status-prep { background: #FFF7ED; color: #F59E0B; }
+.status-ready { background: #F0FDF4; color: #22C55E; }
+.status-delivered { background: var(--pink-light); color: var(--pink-deep); }
+
+.admin-section { display: none; }
+.admin-section.active { display: block; }
+
+.admin-form-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  background: var(--white); padding: 24px;
+  border-radius: var(--radius-sm); margin-bottom: 24px;
+  border: 1px solid var(--pink-light);
+}
+
+/* ── TOAST ────────────────────────────────── */
+.toast {
+  position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%) translateY(20px);
+  background: var(--brown); color: white;
+  padding: 14px 28px; border-radius: 50px;
+  font-size: 14px; font-weight: 500;
+  opacity: 0; transition: all 0.4s ease; z-index: 3000;
+  pointer-events: none;
+}
+
+.toast.show {
+  opacity: 1; transform: translateX(-50%) translateY(0);
+}
+
+/* ── MODAL IMAGE ZOOM ─────────────────────── */
+.img-modal {
+  display: none; position: fixed; inset: 0; z-index: 2500;
+  background: rgba(0,0,0,0.85);
+  align-items: center; justify-content: center;
+  cursor: pointer;
+}
+
+.img-modal.open { display: flex; }
+
+.img-modal-content {
+  font-size: 180px; text-align: center;
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ── RESPONSIVE ─────────────────────────── */
+@media (max-width: 1024px) {
+  .categories-grid { grid-template-columns: repeat(4, 1fr); }
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { columns: 3; }
+  .whyus-grid { grid-template-columns: repeat(2, 1fr); }
+  .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-steps { grid-template-columns: repeat(3, 1fr); }
+  .process-steps::before { display: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .admin-stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .btn-nav { display: none; }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center; gap: 40px;
+  }
+
+  .hero-btns { justify-content: center; }
+  .hero-stats { justify-content: center; }
+  .hero-image { max-width: 320px; margin: 0 auto; }
+
+  .categories-grid { grid-template-columns: repeat(2, 1fr); }
+  .products-grid { grid-template-columns: 1fr; }
+  .gallery-grid { columns: 2; }
+  .custom-inner { grid-template-columns: 1fr; }
+  .whyus-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: repeat(2, 1fr); }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .contact-inner { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .admin-sidebar { width: 200px; }
+  .admin-stats-grid { grid-template-columns: 1fr 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .admin-form-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .categories-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { columns: 2; }
+  .admin-sidebar { display: none; }
+  .hero h1 { font-size: 30px; }
+  section { padding: 60px 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <span class="logo-icon">🎂</span>
+      <span id="brandNameNav">Candy Crush Cakes</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#categories">Cakes</a></li>
+      <li><a href="#products">Menu</a></li>
+      <li><a href="#custom">Custom Order</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#" onclick="openAdmin()">Admin</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-dark-toggle" onclick="toggleDark()" title="Toggle dark mode">🌙</button>
+      <a href="#custom" class="btn-nav">Order Now</a>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#categories" onclick="closeMobileMenu()">Cakes</a></li>
+    <li><a href="#products" onclick="closeMobileMenu()">Menu</a></li>
+    <li><a href="#custom" onclick="closeMobileMenu()">Custom Order</a></li>
+    <li><a href="#gallery" onclick="closeMobileMenu()">Gallery</a></li>
+    <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+    <li><a href="#" onclick="openAdmin(); closeMobileMenu()">Admin Panel</a></li>
+  </ul>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero" id="hero">
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">🌸 Freshly Baked with Love ❤️</div>
+      <h1>Handcrafted Cakes Made <span>Fresh</span> in Malappuram</h1>
+      <p class="hero-desc">Every cake is baked fresh to order using premium ingredients — real butter, fresh cream, and pure flavours. No artificial shortcuts, just genuine homemade goodness delivered right to your door in Malappuram, Kerala.</p>
+      <div class="hero-btns">
+        <a href="#custom" class="btn-primary">🎂 Order Now</a>
+        <a href="#products" class="btn-outline">🍰 Explore Cakes</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong>500+</strong>
+          <span>Happy Customers</span>
+        </div>
+        <div class="hero-stat">
+          <strong>50+</strong>
+          <span>Cake Designs</span>
+        </div>
+        <div class="hero-stat">
+          <strong>5★</strong>
+          <span>Average Rating</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-image-frame">🎂</div>
+      <div class="hero-floating-badges">
+        <div class="hero-badge-float top-left">✨ Custom Designs</div>
+        <div class="hero-badge-float bottom-right">🚚 Same Day Delivery</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories-bg" id="categories">
+  <div class="section-inner">
+    <div class="text-center fade-up">
+      <p class="section-label">Our Specialities</p>
+      <h2 class="section-title">Every Occasion, a Perfect Cake</h2>
+      <p class="section-sub">From birthday celebrations to intimate anniversaries — we bake custom cakes for every special moment in your life.</p>
+    </div>
+
+    <div class="search-wrap fade-up">
+      <input type="text" class="search-input" placeholder="Search for cakes..." id="searchInput" oninput="filterProducts()">
+      <span class="search-icon">🔍</span>
+    </div>
+
+    <div class="categories-grid">
+      <a href="#products" class="cat-card fade-up" onclick="filterByCategory('Birthday')">
+        <span class="cat-icon">🎂</span>
+        <div class="cat-name">Birthday Cakes</div>
+        <div class="cat-count">15+ designs</div>
+      </a>
+      <a href="#products" class="cat-card fade-up" onclick="filterByCategory('Wedding')">
+        <span class="cat-icon">💍</span>
+        <div class="cat-name">Wedding Cakes</div>
+        <div class="cat-count">8+ designs</div>
+      </a>
+      <a href="#products" class="cat-card fade-up" onclick="filterByCategory('Anniversary')">
+        <span class="cat-icon">❤️</span>
+        <div class="cat-name">Anniversary Cakes</div>
+        <div class="cat-count">10+ designs</div>
+      </a>
+      <a href="#products" class="cat-card fade-up" onclick="filterByCategory('Bento')">
+        <span class="cat-icon">🍱</span>
+        <div class="cat-name">Bento Cakes</div>
+        <div class="cat-count">12+ designs</div>
+      </a>
+      <a href="#products" class="cat-card fade-up" onclick="filterByCategory('Cupcake')">
+        <span class="cat-icon">🧁</span>
+        <div class="cat-name">Cupcakes</div>
+        <div class="cat-count">20+ flavours</div>
+      </a>
+      <a href="#products" class="cat-card fade-up" onclick="filterByCategory('Photo')">
+        <span class="cat-icon">📸</span>
+        <div class="cat-name">Photo Cakes</div>
+        <div class="cat-count">Custom</div>
+      </a>
+      <a href="#products" class="cat-card fade-up" onclick="filterByCategory('Theme')">
+        <span class="cat-icon">🦄</span>
+        <div class="cat-name">Theme Cakes</div>
+        <div class="cat-count">30+ themes</div>
+      </a>
+      <a href="#products" class="cat-card fade-up" onclick="filterByCategory('Kids')">
+        <span class="cat-icon">🌈</span>
+        <div class="cat-name">Kids Special</div>
+        <div class="cat-count">25+ designs</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BEST SELLING CAKES -->
+<section class="products-bg" id="products">
+  <div class="section-inner">
+    <div class="fade-up">
+      <p class="section-label">Our Menu</p>
+      <h2 class="section-title">Best Selling Cakes</h2>
+      <p class="section-sub">Handpicked favourites our customers keep ordering again and again.</p>
+    </div>
+
+    <div class="products-filter">
+      <button class="filter-btn active" onclick="filterByTag(this, 'All')">All</button>
+      <button class="filter-btn" onclick="filterByTag(this, 'Birthday')">Birthday</button>
+      <button class="filter-btn" onclick="filterByTag(this, 'Wedding')">Wedding</button>
+      <button class="filter-btn" onclick="filterByTag(this, 'Anniversary')">Anniversary</button>
+      <button class="filter-btn" onclick="filterByTag(this, 'Bento')">Bento</button>
+      <button class="filter-btn" onclick="filterByTag(this, 'Cupcake')">Cupcakes</button>
+      <button class="filter-btn" onclick="filterByTag(this, 'Kids')">Kids</button>
+    </div>
+
+    <div class="products-grid" id="productsGrid">
+      <!-- Dynamically rendered by JS -->
+    </div>
+
+    <div style="text-align:center;margin-top:40px;">
+      <a href="#custom" class="btn-primary">View Full Menu & Order 🎂</a>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOM ORDER SECTION -->
+<section class="custom-bg" id="custom">
+  <div class="custom-inner">
+    <div class="custom-text fade-up">
+      <p class="section-label">Design Your Dream Cake</p>
+      <h2 class="section-title" style="color:white;">Your Imagination,<br>Our Craft</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.7);">Every custom cake is a collaboration. Share your vision and we'll bake it into reality — with fresh ingredients, intricate detailing, and your personal touch.</p>
+      <div class="custom-steps">
+        <div class="custom-step">
+          <div class="step-icon">📸</div>
+          <div class="step-text">
+            <strong>Share a Reference Image</strong>
+            <span>Upload inspiration photos or describe your dream cake</span>
+          </div>
+        </div>
+        <div class="custom-step">
+          <div class="step-icon">🍫</div>
+          <div class="step-text">
+            <strong>Choose Flavour & Weight</strong>
+            <span>Chocolate, vanilla, red velvet, and 10+ more flavours</span>
+          </div>
+        </div>
+        <div class="custom-step">
+          <div class="step-icon">📝</div>
+          <div class="step-text">
+            <strong>Add Your Message</strong>
+            <span>Personalised messages written in beautiful fondant lettering</span>
+          </div>
+        </div>
+        <div class="custom-step">
+          <div class="step-icon">📅</div>
+          <div class="step-text">
+            <strong>Pick Delivery Date & Slot</strong>
+            <span>We need at least 2 days advance notice for custom orders</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="custom-form fade-up">
+      <div class="form-group">
+        <label class="form-label">Your Name</label>
+        <input type="text" class="form-input" placeholder="Aysha / Rahul..." id="custName">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input type="tel" class="form-input" placeholder="9048025982" id="custPhone">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Cake Flavour</label>
+          <select class="form-select form-input" id="custFlavour">
+            <option>Chocolate</option>
+            <option>Vanilla</option>
+            <option>Red Velvet</option>
+            <option>Butterscotch</option>
+            <option>Strawberry</option>
+            <option>Black Forest</option>
+            <option>Pineapple</option>
+            <option>Mango</option>
+            <option>Oreo</option>
+            <option>Truffle</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Weight</label>
+          <select class="form-select form-input" id="custWeight" onchange="updatePrice()">
+            <option value="500">500g — ₹450</option>
+            <option value="750">750g — ₹650</option>
+            <option value="1000">1kg — ₹850</option>
+            <option value="1500">1.5kg — ₹1250</option>
+            <option value="2000">2kg — ₹1600</option>
+            <option value="3000">3kg — ₹2400</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Delivery Date</label>
+          <input type="date" class="form-input" id="custDate" style="color-scheme:dark;">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Time Slot</label>
+        <select class="form-select form-input" id="custSlot">
+          <option>Morning (9am – 12pm)</option>
+          <option>Afternoon (12pm – 3pm)</option>
+          <option>Evening (3pm – 6pm)</option>
+          <option>Self Pickup</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Cake Message (optional)</label>
+        <input type="text" class="form-input" placeholder="Happy Birthday Aysha! 🎉" id="custMsg">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Design Description / Special Requests</label>
+        <textarea class="form-input form-textarea" placeholder="Describe the design you want — theme, colours, characters..." id="custDesc"></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Add-ons</label>
+        <div class="addons-grid" id="addonsGrid">
+          <label class="addon-check"><input type="checkbox" value="🕯️ Candles (+₹30)"> <span>🕯️ Candles +₹30</span></label>
+          <label class="addon-check"><input type="checkbox" value="💌 Greeting Card (+₹50)"> <span>💌 Card +₹50</span></label>
+          <label class="addon-check"><input type="checkbox" value="🌸 Flowers (+₹120)"> <span>🌸 Flowers +₹120</span></label>
+          <label class="addon-check"><input type="checkbox" value="🎀 Gift Wrap (+₹40)"> <span>🎀 Wrap +₹40</span></label>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-top:8px;">
+        <span style="color:rgba(255,255,255,0.7);font-size:14px;">Estimated Total:</span>
+        <strong style="color:var(--pink);font-size:22px;font-family:'Playfair Display',serif;" id="priceDisplay">₹850</strong>
+      </div>
+      <button class="btn-whatsapp-order" onclick="orderViaWhatsApp()">
+        <span style="font-size:22px;">💬</span> Order via WhatsApp
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-bg" id="gallery">
+  <div class="section-inner">
+    <div class="text-center fade-up">
+      <p class="section-label">Our Work</p>
+      <h2 class="section-title">Sweet Creations Gallery</h2>
+      <p class="section-sub">Peek into our portfolio — each cake is a little edible masterpiece.</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="whyus-bg" id="about">
+  <div class="section-inner">
+    <div class="text-center fade-up">
+      <p class="section-label">Why We're Different</p>
+      <h2 class="section-title">Baked with Purpose</h2>
+      <p class="section-sub">We're a small home bakery in Malappuram with very big attention to detail.</p>
+    </div>
+    <div class="whyus-grid">
+      <div class="why-card fade-up">
+        <span class="why-icon">🌿</span>
+        <div class="why-title">100% Freshly Baked</div>
+        <div class="why-desc">Every cake is baked fresh on the day of delivery — never frozen, never pre-made.</div>
+      </div>
+      <div class="why-card fade-up">
+        <span class="why-icon">⭐</span>
+        <div class="why-title">Premium Ingredients</div>
+        <div class="why-desc">Real butter, fresh cream, Belgian chocolate — ingredients that make the difference.</div>
+      </div>
+      <div class="why-card fade-up">
+        <span class="why-icon">❤️</span>
+        <div class="why-title">Homemade with Love</div>
+        <div class="why-desc">Small-batch home baking means personal care in every layer and every crumb.</div>
+      </div>
+      <div class="why-card fade-up">
+        <span class="why-icon">🎨</span>
+        <div class="why-title">Custom Designs</div>
+        <div class="why-desc">From minimalist bento to elaborate multi-tier creations — we make your vision edible.</div>
+      </div>
+      <div class="why-card fade-up">
+        <span class="why-icon">🚚</span>
+        <div class="why-title">On-Time Delivery</div>
+        <div class="why-desc">We understand occasions can't wait. Reliable delivery across Malappuram.</div>
+      </div>
+      <div class="why-card fade-up">
+        <span class="why-icon">🧼</span>
+        <div class="why-title">Hygienic Preparation</div>
+        <div class="why-desc">Clean, certified home kitchen. Every cake is packaged with food-safe materials.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDERING PROCESS -->
+<section class="process-bg" id="process">
+  <div class="section-inner">
+    <div class="text-center fade-up">
+      <p class="section-label">How It Works</p>
+      <h2 class="section-title">From Order to Doorstep</h2>
+      <p class="section-sub">Ordering a custom cake is simple and fun.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step fade-up">
+        <div class="process-num">1</div>
+        <span class="process-icon">🎂</span>
+        <div class="process-name">Choose Your Cake</div>
+        <div class="process-desc">Browse our menu or describe your dream design</div>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">2</div>
+        <span class="process-icon">✏️</span>
+        <div class="process-name">Customise</div>
+        <div class="process-desc">Pick flavour, weight, message & add-ons</div>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">3</div>
+        <span class="process-icon">✅</span>
+        <div class="process-name">Confirm Order</div>
+        <div class="process-desc">WhatsApp us to confirm and pay advance</div>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">4</div>
+        <span class="process-icon">👩‍🍳</span>
+        <div class="process-name">Fresh Preparation</div>
+        <div class="process-desc">We bake your cake fresh on the day</div>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">5</div>
+        <span class="process-icon">🚚</span>
+        <div class="process-name">Delivered or Pickup</div>
+        <div class="process-desc">Right to your door or collect from us</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-bg" id="reviews">
+  <div class="section-inner">
+    <div class="text-center fade-up">
+      <p class="section-label">Customer Love</p>
+      <h2 class="section-title">What Our Customers Say</h2>
+    </div>
+    <div class="reviews-grid" id="reviewsGrid">
+      <!-- rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-bg" id="faq">
+  <div class="section-inner">
+    <div class="text-center fade-up">
+      <p class="section-label">Common Questions</p>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-grid" id="faqGrid">
+      <!-- rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-bg" id="contact">
+  <div class="contact-inner">
+    <div class="fade-up">
+      <p class="section-label">Get in Touch</p>
+      <h2 class="section-title">Let's Bake Something<br>Beautiful Together</h2>
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-item-text">
+            <strong>Phone / WhatsApp</strong>
+            <span><a href="tel:9048025982">+91 9048025982</a></span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-item-text">
+            <strong>Location</strong>
+            <span>Malappuram, Kerala, India</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">⏰</div>
+          <div class="contact-item-text">
+            <strong>Order Hours</strong>
+            <span>Daily 8am – 8pm · Orders need 2 days advance notice</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📦</div>
+          <div class="contact-item-text">
+            <strong>Delivery</strong>
+            <span>Across Malappuram · Pickup also available</span>
+          </div>
+        </div>
+      </div>
+      <div class="map-embed">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125122.04742516!2d76.0407!3d11.0509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba6408d86073eb7%3A0x1fc7e52ed75d7ade!2sMalappuram%2C%20Kerala!5e0!3m2!1sen!2sin!4v1698000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="contact-form fade-up">
+      <h3 class="contact-form-title">Send an Enquiry</h3>
+      <input type="text" class="light-input" placeholder="Your Name" id="cName">
+      <input type="tel" class="light-input" placeholder="Phone / WhatsApp Number" id="cPhone">
+      <input type="email" class="light-input" placeholder="Email (optional)" id="cEmail">
+      <input type="text" class="light-input" placeholder="Type of Cake / Occasion" id="cCake">
+      <textarea class="light-input light-textarea" placeholder="Tell us more about what you'd like..." id="cMsg"></textarea>
+      <button class="btn-send" onclick="sendEnquiry()">Send Enquiry 💬</button>
+      <div style="margin-top:20px;text-align:center;">
+        <p style="font-size:13px;color:var(--text-light);margin-bottom:12px;">Or reach us directly on WhatsApp</p>
+        <a href="https://wa.me/919048025982?text=Hi!%20I'd%20like%20to%20order%20a%20cake%20from%20Sweet%20Bloom%20Cakes" target="_blank" class="btn-primary" style="display:inline-flex;">
+          💬 Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo" style="color:white;">
+          <span>🎂</span> <span id="brandNameFooter">Candy Crush Cakes</span>
+        </a>
+        <p class="footer-tagline">Freshly Baked with Love ❤️<br>Handcrafted cakes made fresh in the heart of Malappuram, Kerala — for every celebration, big and small.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" title="Instagram">📸</a>
+          <a href="#" class="social-link" title="Facebook">📘</a>
+          <a href="https://wa.me/919048025982" class="social-link" title="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Our Cakes</h4>
+        <ul class="footer-links">
+          <li><a href="#categories">Birthday Cakes</a></li>
+          <li><a href="#categories">Wedding Cakes</a></li>
+          <li><a href="#categories">Bento Cakes</a></li>
+          <li><a href="#categories">Anniversary Cakes</a></li>
+          <li><a href="#categories">Kids Special</a></li>
+          <li><a href="#categories">Photo Cakes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#process">How It Works</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="footer-links">
+          <li><a href="tel:9048025982">📞 9048025982</a></li>
+          <li><a href="https://wa.me/919048025982">💬 WhatsApp Us</a></li>
+          <li><a href="#">📍 Malappuram, Kerala</a></li>
+          <li><a href="#">⏰ Open 8am – 8pm Daily</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Candy Crush Cakes, Malappuram. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#" onclick="openAdmin()">Admin</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/919048025982?text=Hi!%20I'd%20like%20to%20order%20a%20cake%20from%20Sweet%20Bloom%20Cakes%20in%20Malappuram" target="_blank" class="btn-wa-float" title="Order on WhatsApp">💬</a>
+
+<!-- IMAGE ZOOM MODAL -->
+<div class="img-modal" id="imgModal" onclick="closeImgModal()">
+  <div class="img-modal-content" id="imgModalContent"></div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- ADMIN PANEL -->
+<div class="admin-panel" id="adminPanel">
+  <div class="admin-sidebar">
+    <div class="admin-logo">🎂 Admin Panel</div>
+    <button class="admin-nav-item active" onclick="showAdminSection('dashboard', this)">📊 Dashboard</button>
+    <button class="admin-nav-item" onclick="showAdminSection('orders', this)">📦 Orders</button>
+    <button class="admin-nav-item" onclick="showAdminSection('cakes', this)">🎂 Manage Cakes</button>
+    <button class="admin-nav-item" onclick="showAdminSection('gallery', this)">🖼️ Gallery</button>
+    <button class="admin-nav-item" onclick="showAdminSection('reviews', this)">⭐ Reviews</button>
+    <button class="admin-nav-item" onclick="showAdminSection('settings', this)">⚙️ Settings</button>
+    <button class="admin-nav-item" onclick="closeAdmin()" style="margin-top:auto;color:#ff8888;">✕ Close</button>
+  </div>
+  <div class="admin-content">
+
+    <div class="admin-section active" id="adminDashboard">
+      <div class="admin-header">
+        <h2>Dashboard</h2>
+        <button class="btn-close-admin" onclick="closeAdmin()">✕</button>
+      </div>
+      <div class="admin-stats-grid">
+        <div class="admin-stat-card">
+          <div class="label">Today's Orders</div>
+          <div class="value">7</div>
+          <div class="trend">↑ 3 from yesterday</div>
+        </div>
+        <div class="admin-stat-card">
+          <div class="label">Pending</div>
+          <div class="value">4</div>
+          <div class="trend" style="color:var(--gold);">Needs attention</div>
+        </div>
+        <div class="admin-stat-card">
+          <div class="label">This Month Revenue</div>
+          <div class="value">₹42,800</div>
+          <div class="trend">↑ 12% vs last month</div>
+        </div>
+        <div class="admin-stat-card">
+          <div class="label">Total Customers</div>
+          <div class="value">512</div>
+          <div class="trend">↑ 28 new this week</div>
+        </div>
+      </div>
+      <h3 style="margin-bottom:16px;font-size:18px;color:var(--text-dark);">Recent Orders</h3>
+      <table class="admin-table">
+        <thead>
+          <tr><th>Order ID</th><th>Customer</th><th>Cake</th><th>Date</th><th>Amount</th><th>Status</th></tr>
+        </thead>
+        <tbody id="ordersTableBody">
+          <tr><td>#2401</td><td>Aysha Rahman</td><td>Chocolate Birthday (1kg)</td><td>28 Jun</td><td>₹850</td><td><span class="status-badge status-prep">Preparing</span></td></tr>
+          <tr><td>#2400</td><td>Rahul Dev</td><td>Red Velvet Bento</td><td>28 Jun</td><td>₹650</td><td><span class="status-badge status-new">New</span></td></tr>
+          <tr><td>#2399</td><td>Fatima Nair</td><td>Wedding Tier (3kg)</td><td>27 Jun</td><td>₹2400</td><td><span class="status-badge status-ready">Ready</span></td></tr>
+          <tr><td>#2398</td><td>Priya Mohan</td><td>Kids Unicorn (1.5kg)</td><td>27 Jun</td><td>₹1250</td><td><span class="status-badge status-delivered">Delivered</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="admin-section" id="adminOrders">
+      <div class="admin-header">
+        <h2>All Orders</h2>
+      </div>
+      <div style="display:flex;gap:12px;margin-bottom:20px;">
+        <select class="light-input" style="max-width:180px;margin:0;background:var(--white);" onchange="filterOrderStatus(this.value)">
+          <option value="All">All Orders</option>
+          <option value="New">New</option>
+          <option value="Preparing">Preparing</option>
+          <option value="Ready">Ready</option>
+          <option value="Delivered">Delivered</option>
+        </select>
+      </div>
+      <table class="admin-table">
+        <thead>
+          <tr><th>Order ID</th><th>Customer</th><th>Phone</th><th>Cake</th><th>Delivery Date</th><th>Amount</th><th>Status</th><th>Action</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>#2401</td><td>Aysha Rahman</td><td>9876543210</td><td>Chocolate 1kg</td><td>29 Jun</td><td>₹850</td><td><span class="status-badge status-prep">Preparing</span></td><td><button onclick="showToast('Order #2401 marked Ready!')" style="background:var(--pink-deep);color:white;border:none;padding:4px 12px;border-radius:50px;cursor:pointer;font-size:12px;">Mark Ready</button></td></tr>
+          <tr><td>#2400</td><td>Rahul Dev</td><td>9123456789</td><td>Red Velvet Bento</td><td>29 Jun</td><td>₹650</td><td><span class="status-badge status-new">New</span></td><td><button onclick="showToast('Order #2400 confirmed!')" style="background:var(--pink-deep);color:white;border:none;padding:4px 12px;border-radius:50px;cursor:pointer;font-size:12px;">Confirm</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="admin-section" id="adminCakes">
+      <div class="admin-header">
+        <h2>Manage Cakes</h2>
+        <button onclick="showToast('Add Cake form coming soon!')" class="btn-primary" style="padding:10px 20px;font-size:14px;">+ Add New Cake</button>
+      </div>
+      <div class="admin-form-grid">
+        <div>
+          <label class="form-label" style="color:var(--text-mid);">Cake Name</label>
+          <input type="text" class="light-input" placeholder="e.g. Chocolate Dream Cake" style="margin-bottom:0;">
+        </div>
+        <div>
+          <label class="form-label" style="color:var(--text-mid);">Category</label>
+          <select class="light-input" style="margin:0;">
+            <option>Birthday</option><option>Wedding</option><option>Bento</option>
+          </select>
+        </div>
+        <div>
+          <label class="form-label" style="color:var(--text-mid);">Base Price (₹)</label>
+          <input type="number" class="light-input" placeholder="850" style="margin-bottom:0;">
+        </div>
+        <div>
+          <label class="form-label" style="color:var(--text-mid);">Emoji / Icon</label>
+          <input type="text" class="light-input" placeholder="🎂" style="margin-bottom:0;">
+        </div>
+      </div>
+      <button onclick="showToast('Cake saved successfully!')" class="btn-send" style="max-width:200px;">Save Cake</button>
+    </div>
+
+    <div class="admin-section" id="adminGallery">
+      <div class="admin-header">
+        <h2>Gallery Management</h2>
+        <button onclick="showToast('Image upload ready!')" class="btn-primary" style="padding:10px 20px;font-size:14px;">+ Upload Photo</button>
+      </div>
+      <p style="color:var(--text-light);font-size:14px;">Manage your cake gallery here. Upload photos of completed cakes to showcase your work.</p>
+    </div>
+
+    <div class="admin-section" id="adminReviews">
+      <div class="admin-header">
+        <h2>Customer Reviews</h2>
+      </div>
+      <table class="admin-table">
+        <thead>
+          <tr><th>Customer</th><th>Rating</th><th>Review</th><th>Status</th><th>Action</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Aysha M.</td><td>⭐⭐⭐⭐⭐</td><td>"Perfect cake, delivered on time!"</td><td><span class="status-badge status-ready">Published</span></td><td><button onclick="showToast('Review hidden!')" style="font-size:12px;border:none;background:none;cursor:pointer;color:var(--pink-deep);">Hide</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="admin-section" id="adminSettings">
+      <div class="admin-header">
+        <h2>Site Settings</h2>
+      </div>
+      <div class="admin-form-grid">
+        <div>
+          <label class="form-label" style="color:var(--text-mid);">Business Name</label>
+          <input type="text" class="light-input" id="adminBrandName" placeholder="Candy Crush Cakes" style="margin-bottom:0;">
+        </div>
+        <div>
+          <label class="form-label" style="color:var(--text-mid);">Phone Number</label>
+          <input type="text" class="light-input" placeholder="9048025982" style="margin-bottom:0;">
+        </div>
+        <div>
+          <label class="form-label" style="color:var(--text-mid);">WhatsApp Number</label>
+          <input type="text" class="light-input" placeholder="919048025982" style="margin-bottom:0;">
+        </div>
+        <div>
+          <label class="form-label" style="color:var(--text-mid);">Instagram Handle</label>
+          <input type="text" class="light-input" placeholder="@candycakesmalappuram" style="margin-bottom:0;">
+        </div>
+      </div>
+      <button onclick="saveBrandName()" class="btn-send" style="max-width:200px;">Save Settings</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ── DATA ──────────────────────────────────────────────────────────
+
+const PRODUCTS = [
+  { id:1, name:'Chocolate Dream Cake', cat:'Birthday', price:850, emoji:'🎂', rating:4.9, reviews:124, badge:'Best Seller', weights:['500g','1kg','1.5kg','2kg'], prices:[450,850,1250,1600] },
+  { id:2, name:'Red Velvet Elegance', cat:'Anniversary', price:950, emoji:'❤️', rating:4.8, reviews:89, badge:'Popular', weights:['500g','1kg','1.5kg'], prices:[500,950,1400] },
+  { id:3, name:'Unicorn Fantasy Cake', cat:'Kids', price:1200, emoji:'🦄', rating:5.0, reviews:56, badge:'New', weights:['1kg','1.5kg','2kg'], prices:[1200,1700,2200] },
+  { id:4, name:'Bento Box Special', cat:'Bento', price:450, emoji:'🎁', rating:4.7, reviews:203, badge:'Trending', weights:['250g','500g'], prices:[350,450] },
+  { id:5, name:'Royal Wedding Tier', cat:'Wedding', price:3500, emoji:'👑', rating:5.0, reviews:32, badge:'Premium', weights:['3kg','4kg','5kg'], prices:[3500,4500,5500] },
+  { id:6, name:'Mango Tango Cake', cat:'Birthday', price:800, emoji:'🥭', rating:4.6, reviews:77, badge:'', weights:['500g','1kg','1.5kg'], prices:[400,800,1150] },
+  { id:7, name:'Oreo Crunch Cake', cat:'Birthday', price:900, emoji:'🍪', rating:4.8, reviews:98, badge:'Fan Favourite', weights:['1kg','1.5kg'], prices:[900,1300] },
+  { id:8, name:'Butterscotch Delight', cat:'Anniversary', price:750, emoji:'🍮', rating:4.5, reviews:61, badge:'', weights:['500g','1kg'], prices:[400,750] },
+  { id:9, name:'Frozen Theme Cake', cat:'Kids', price:1400, emoji:'⛄', rating:4.9, reviews:44, badge:'Kids Fav', weights:['1kg','1.5kg','2kg'], prices:[1400,1900,2400] },
+  { id:10, name:'Assorted Cupcakes', cat:'Cupcake', price:480, emoji:'🧁', rating:4.7, reviews:156, badge:'Value Pack', weights:['6pcs','12pcs'], prices:[480,880] },
+  { id:11, name:'Photo Print Cake', cat:'Photo', price:1000, emoji:'📸', rating:4.8, reviews:79, badge:'Custom', weights:['1kg','1.5kg'], prices:[1000,1450] },
+  { id:12, name:'Barbie Doll Cake', cat:'Theme', price:1600, emoji:'💃', rating:5.0, reviews:28, badge:'Unique', weights:['1.5kg','2kg'], prices:[1600,2100] }
+];
+
+const REVIEWS = [
+  { name:'Aysha Rahman', loc:'Malappuram Town', rating:5, text:'Absolutely stunning cake for my daughter\'s birthday! The chocolate sponge was incredibly moist and the unicorn design was exactly what she wanted. Every guest asked where we got it!', emoji:'🌸' },
+  { name:'Rahul Dev', loc:'Perinthalmanna', rating:5, text:'Ordered a bento cake for my girlfriend\'s anniversary and it was beyond beautiful. The craftsmanship and attention to detail was remarkable. Will definitely order again!', emoji:'🎂' },
+  { name:'Fatima Noor', loc:'Tirur', rating:5, text:'My wedding cake was a dream come true. Three tiers of perfection. The taste was exceptional and it looked like something from a magazine. So grateful!', emoji:'💍' },
+  { name:'Priya Mohan', loc:'Manjeri', rating:5, text:'Quick delivery, perfect packaging, and the red velvet was divine. The custom message was written beautifully in fondant. My family loved every bit of it!', emoji:'❤️' },
+  { name:'Anees Kumar', loc:'Kondotty', rating:5, text:'The oreo crunch cake was a hit at our office party! Everyone kept asking about the bakery. Fresh, delicious, and delivered right on time. 10/10!', emoji:'🏆' },
+  { name:'Zainab Ali', loc:'Kottakkal', rating:5, text:'Ordered the photo cake for my mum\'s 60th birthday. The photo print was crystal clear and the pineapple flavour was her favourite. She was so touched!', emoji:'📸' }
+];
+
+const FAQS = [
+  { q:'How far in advance should I order?', a:'For standard cakes, 24 hours notice is ideal. For custom and tiered cakes, we recommend 2–3 days advance booking to ensure we can source the best ingredients and give your cake the time it deserves.' },
+  { q:'Do you deliver outside Malappuram?', a:'We currently deliver across Malappuram district. For locations outside, you\'re welcome to arrange self-pickup from our location. Contact us on WhatsApp to discuss delivery options.' },
+  { q:'What payment methods do you accept?', a:'We accept UPI (GPay, PhonePe, Paytm), bank transfer, and cash. A 50% advance is required at the time of order confirmation.' },
+  { q:'Can I customise the flavour and design?', a:'Absolutely! All our cakes can be customised — from flavour and weight to design, colour theme, characters, and special messages. Use our custom order form or chat with us on WhatsApp.' },
+  { q:'Are your cakes eggless?', a:'Yes! We offer both egg and eggless options for all our cakes. Just mention your preference when placing the order. All eggless cakes use the same premium ingredients and taste equally delicious.' },
+  { q:'What happens if my delivery is delayed?', a:'We take delivery timelines very seriously. In the rare case of a delay, we will contact you immediately and offer compensation. Customer satisfaction is our top priority.' },
+  { q:'Can I see the cake before delivery?', a:'For pickup orders, you can inspect the cake before taking it. For deliveries, we send a photo via WhatsApp before dispatch so you can confirm you\'re happy with how it looks.' },
+  { q:'Do you make cakes for corporate events?', a:'Yes! We love corporate orders — for office celebrations, team parties, or client gifting. We offer bulk discounts and can customise branding on cakes. Contact us for corporate pricing.' }
+];
+
+const GALLERY_ITEMS = [
+  { emoji:'🎂', label:'Chocolate Birthday Cake', size:'tall', tag:'Birthday' },
+  { emoji:'🦄', label:'Unicorn Fantasy', size:'short', tag:'Kids' },
+  { emoji:'👑', label:'Royal Wedding Tier', size:'medium', tag:'Wedding' },
+  { emoji:'🎁', label:'Bento Box Cake', size:'short', tag:'Bento' },
+  { emoji:'❤️', label:'Anniversary Heart Cake', size:'tall', tag:'Anniversary' },
+  { emoji:'🧁', label:'Assorted Cupcakes', size:'medium', tag:'Cupcakes' },
+  { emoji:'📸', label:'Photo Print Cake', size:'short', tag:'Photo' },
+  { emoji:'💃', label:'Barbie Doll Cake', size:'tall', tag:'Theme' },
+  { emoji:'🥭', label:'Mango Special', size:'medium', tag:'Birthday' },
+  { emoji:'⛄', label:'Frozen Theme Cake', size:'tall', tag:'Kids' },
+  { emoji:'🍪', label:'Oreo Crunch Cake', size:'short', tag:'Birthday' },
+  { emoji:'🌈', label:'Rainbow Kids Cake', size:'medium', tag:'Kids' }
+];
+
+// ── RENDER ────────────────────────────────────────────────────────
+
+let activeFilter = 'All';
+let wishlist = new Set();
+
+function renderProducts(filter = 'All', search = '') {
+  const grid = document.getElementById('productsGrid');
+  const filtered = PRODUCTS.filter(p => {
+    const matchCat = filter === 'All' || p.cat === filter;
+    const matchSearch = !search || p.name.toLowerCase().includes(search.toLowerCase());
+    return matchCat && matchSearch;
+  });
+
+  grid.innerHTML = filtered.length ? filtered.map(p => `
+    <div class="product-card fade-up" data-cat="${p.cat}">
+      <div class="product-img">
+        <div style="font-size:80px;">${p.emoji}</div>
+        ${p.badge ? `<span class="product-badge-tag">${p.badge}</span>` : ''}
+        <button class="wishlist-btn ${wishlist.has(p.id) ? 'active' : ''}" onclick="toggleWishlist(${p.id}, this)" title="Add to wishlist">
+          ${wishlist.has(p.id) ? '❤️' : '🤍'}
+        </button>
+      </div>
+      <div class="product-body">
+        <div class="product-name">${p.name}</div>
+        <div class="product-rating">
+          <span class="stars">${'★'.repeat(Math.round(p.rating))}</span>
+          <span style="font-size:14px;font-weight:600;color:var(--text-dark);">${p.rating}</span>
+          <span class="rating-count">(${p.reviews} reviews)</span>
+        </div>
+        <div class="product-weights" id="weights-${p.id}">
+          ${p.weights.map((w, i) => `<button class="weight-chip ${i===1?'active':''}" onclick="selectWeight(${p.id}, ${i}, this)">${w}</button>`).join('')}
+        </div>
+        <div class="product-footer">
+          <div class="product-price">
+            ₹<span id="price-${p.id}">${p.prices[1] || p.prices[0]}</span>
+            <small> onwards</small>
+          </div>
+          <button class="btn-quick-order" onclick="quickOrder('${p.name}', ${p.id})">
+            💬 Order
+          </button>
+        </div>
+      </div>
+    </div>
+  `).join('') : '<div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--text-light);">No cakes found. Try a different search! 🎂</div>';
+
+  observeFadeUp();
+}
+
+function selectWeight(pid, idx, btn) {
+  const product = PRODUCTS.find(p => p.id === pid);
+  document.querySelectorAll(`#weights-${pid} .weight-chip`).forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(`price-${pid}`).textContent = product.prices[idx];
+}
+
+function toggleWishlist(id, btn) {
+  if (wishlist.has(id)) {
+    wishlist.delete(id);
+    btn.innerHTML = '🤍';
+    btn.classList.remove('active');
+    showToast('Removed from wishlist');
+  } else {
+    wishlist.add(id);
+    btn.innerHTML = '❤️';
+    btn.classList.add('active');
+    showToast('Added to wishlist ❤️');
+  }
+}
+
+function quickOrder(name, id) {
+  const msg = encodeURIComponent(`Hi! I'd like to order *${name}* from Sweet Bloom Cakes, Malappuram. Please let me know the availability and payment details. 🎂`);
+  window.open(`https://wa.me/919048025982?text=${msg}`, '_blank');
+}
+
+function filterByTag(btn, tag) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeFilter = tag;
+  renderProducts(tag, document.getElementById('searchInput').value);
+  document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+}
+
+function filterByCategory(cat) {
+  activeFilter = cat;
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.toggle('active', b.textContent.trim() === cat || (cat === 'All' && b.textContent === 'All'));
+  });
+  renderProducts(cat);
+}
+
+function filterProducts() {
+  renderProducts(activeFilter, document.getElementById('searchInput').value);
+}
+
+function renderGallery() {
+  document.getElementById('galleryGrid').innerHTML = GALLERY_ITEMS.map(g => `
+    <div class="gallery-item" onclick="openImgModal('${g.emoji}', '${g.label}')">
+      <div class="gallery-item-img ${g.size}">
+        <span style="font-size:${g.size==='tall'?90:g.size==='short'?60:75}px;">${g.emoji}</span>
+      </div>
+      <div class="gallery-overlay">
+        <p>${g.label}</p>
+        <span>${g.tag}</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderReviews() {
+  document.getElementById('reviewsGrid').innerHTML = REVIEWS.map(r => `
+    <div class="review-card fade-up">
+      <div class="review-rating">${'⭐'.repeat(r.rating)}</div>
+      <p class="review-text">"${r.text}"</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">${r.emoji}</div>
+        <div>
+          <div class="reviewer-name">${r.name}</div>
+          <div class="reviewer-loc">📍 ${r.loc}</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  observeFadeUp();
+}
+
+function renderFAQ() {
+  document.getElementById('faqGrid').innerHTML = FAQS.map((f, i) => `
+    <div class="faq-item" id="faq${i}">
+      <button class="faq-q" onclick="toggleFaq(${i})">
+        <span>${f.q}</span>
+        <span class="faq-arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">${f.a}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function toggleFaq(i) {
+  const item = document.getElementById('faq' + i);
+  item.classList.toggle('open');
+}
+
+// ── CUSTOM ORDER PRICING ─────────────────────────────────────────
+
+const weightPrices = { 500: 450, 750: 650, 1000: 850, 1500: 1250, 2000: 1600, 3000: 2400 };
+
+function updatePrice() {
+  const weight = parseInt(document.getElementById('custWeight').value);
+  let total = weightPrices[weight] || 850;
+  document.querySelectorAll('#addonsGrid input:checked').forEach(c => {
+    const val = c.value.match(/₹(\d+)/);
+    if (val) total += parseInt(val[1]);
+  });
+  document.getElementById('priceDisplay').textContent = '₹' + total.toLocaleString('en-IN');
+}
+
+document.addEventListener('change', e => {
+  if (e.target.closest('#addonsGrid')) updatePrice();
+});
+
+function orderViaWhatsApp() {
+  const name = document.getElementById('custName').value;
+  const phone = document.getElementById('custPhone').value;
+  const flavour = document.getElementById('custFlavour').value;
+  const weight = document.getElementById('custWeight').options[document.getElementById('custWeight').selectedIndex].text;
+  const date = document.getElementById('custDate').value;
+  const slot = document.getElementById('custSlot').value;
+  const msg = document.getElementById('custMsg').value;
+  const desc = document.getElementById('custDesc').value;
+  const price = document.getElementById('priceDisplay').textContent;
+
+  const addons = [...document.querySelectorAll('#addonsGrid input:checked')].map(c => c.value).join(', ') || 'None';
+
+  if (!name || !phone) { showToast('Please fill in your name and phone number!'); return; }
+
+  const wa = `Hi! I'd like to place a custom cake order 🎂
+
+*Name:* ${name}
+*Phone:* ${phone}
+*Flavour:* ${flavour}
+*Weight:* ${weight}
+*Delivery Date:* ${date || 'TBD'}
+*Time Slot:* ${slot}
+*Cake Message:* ${msg || 'None'}
+*Design Description:* ${desc || 'Standard design'}
+*Add-ons:* ${addons}
+*Estimated Total:* ${price}
+
+Looking forward to hearing from you!`;
+
+  window.open('https://wa.me/919048025982?text=' + encodeURIComponent(wa), '_blank');
+}
+
+function sendEnquiry() {
+  const name = document.getElementById('cName').value;
+  const phone = document.getElementById('cPhone').value;
+  const cake = document.getElementById('cCake').value;
+  const msgTxt = document.getElementById('cMsg').value;
+
+  if (!name || !phone) { showToast('Please fill in your name and phone number!'); return; }
+
+  const wa = `Hi! I have an enquiry from your website 🎂
+
+*Name:* ${name}
+*Phone:* ${phone}
+*Cake / Occasion:* ${cake}
+*Message:* ${msgTxt}`;
+
+  window.open('https://wa.me/919048025982?text=' + encodeURIComponent(wa), '_blank');
+  showToast('Redirecting to WhatsApp! 💬');
+}
+
+// ── MODAL / GALLERY ZOOM ─────────────────────────────────────────
+
+function openImgModal(emoji, label) {
+  document.getElementById('imgModal').classList.add('open');
+  document.getElementById('imgModalContent').innerHTML = `
+    <div style="font-size:160px;line-height:1;">${emoji}</div>
+    <p style="color:white;margin-top:20px;font-family:'Playfair Display',serif;font-size:22px;">${label}</p>
+    <p style="color:rgba(255,255,255,0.6);font-size:14px;margin-top:8px;">Click anywhere to close</p>
+  `;
+}
+
+function closeImgModal() {
+  document.getElementById('imgModal').classList.remove('open');
+}
+
+// ── TOAST ────────────────────────────────────────────────────────
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// ── DARK MODE ────────────────────────────────────────────────────
+
+function toggleDark() {
+  const isDark = document.body.getAttribute('data-dark') === 'true';
+  document.body.setAttribute('data-dark', !isDark);
+  document.querySelector('.btn-dark-toggle').textContent = isDark ? '🌙' : '☀️';
+  localStorage.setItem('darkMode', !isDark);
+}
+
+// ── NAV SCROLL ───────────────────────────────────────────────────
+
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 30);
+});
+
+// ── MOBILE MENU ──────────────────────────────────────────────────
+
+function toggleMobileMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+function closeMobileMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+// ── SCROLL ANIMATION ─────────────────────────────────────────────
+
+function observeFadeUp() {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up:not(.visible)').forEach(el => io.observe(el));
+}
+
+// ── ADMIN PANEL ──────────────────────────────────────────────────
+
+function openAdmin() {
+  document.getElementById('adminPanel').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeAdmin() {
+  document.getElementById('adminPanel').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function showAdminSection(section, btn) {
+  document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.admin-nav-item').forEach(b => b.classList.remove('active'));
+  document.getElementById('admin' + section.charAt(0).toUpperCase() + section.slice(1)).classList.add('active');
+  btn.classList.add('active');
+}
+
+function saveBrandName() {
+  const val = document.getElementById('adminBrandName').value;
+  if (val.trim()) {
+    document.getElementById('brandNameNav').textContent = val;
+    document.getElementById('brandNameFooter').textContent = val;
+    document.title = val + ' — Malappuram, Kerala';
+    showToast('Brand name updated: ' + val);
+  }
+}
+
+// ── SET MIN DATE ─────────────────────────────────────────────────
+
+const today = new Date();
+today.setDate(today.getDate() + 2);
+document.getElementById('custDate').min = today.toISOString().split('T')[0];
+
+// ── INIT ─────────────────────────────────────────────────────────
+
+function init() {
+  renderProducts();
+  renderGallery();
+  renderReviews();
+  renderFAQ();
+  observeFadeUp();
+
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.body.setAttribute('data-dark', 'true');
+    document.querySelector('.btn-dark-toggle').textContent = '☀️';
+  }
+}
+
+init();
+</script>
+</body>
+</html>
